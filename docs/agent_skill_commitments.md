@@ -1,0 +1,1 @@
+Open file /home/workdir/artifacts/ahp_decision_tool/docs/agent_skill_commitments.md and read content

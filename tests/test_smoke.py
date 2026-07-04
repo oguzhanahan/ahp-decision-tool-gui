@@ -1,0 +1,1 @@
+Open file /home/workdir/artifacts/ahp_decision_tool/tests/test_smoke.py and read content
