@@ -1,0 +1,1 @@
+Open file /home/workdir/artifacts/ahp_decision_tool/src/ahp_tool/core/synthesis.py and read content
