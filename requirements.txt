@@ -1,1 +1,11 @@
-Open file /home/workdir/artifacts/ahp_decision_tool/requirements.txt and read content
+# Core (always required)
+numpy>=1.24
+scipy>=1.10
+pandas>=2.0
+matplotlib>=3.7
+
+# GUI (optional but recommended for full experience)
+customtkinter>=5.2
+
+# Dev / Test (install with pip install -r requirements.txt[dev] or use pyproject)
+# ruff mypy pytest pytest-cov pre-commit hypothesis

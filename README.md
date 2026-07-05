@@ -2,16 +2,16 @@
 
 A Python-based desktop application implementing the Analytic Hierarchy Process (AHP) for structured decision making, featuring a modern graphical user interface.
 
-## Features (Planned)
-- Intuitive hierarchy definition (Goal, Criteria, Alternatives)
-- Interactive pairwise comparison matrices with Saaty 1-9 scale + verbal descriptions
-- Automatic consistency ratio (CR) calculation and warnings
-- Priority vector computation using reliable methods (geometric mean / power iteration)
-- Global priority synthesis and alternative ranking
-- Interactive sensitivity analysis
-- Modern dark-themed GUI with embedded visualizations (bar, radar charts)
-- Project save/load (JSON), export to Excel/CSV/PDF report
-- Example templates and comprehensive help
+## Features (v1.0 - Complete)
+- Full AHP workflow: Define hierarchy → Interactive Saaty matrices with **live CR feedback** (color-coded)
+- Real computation engine (geom. mean + power iteration, synthesis, consistency)
+- Results: Sorted global ranking table + embedded Bar / Radar charts
+- Interactive sensitivity analysis (live weight sliders → instant re-ranking)
+- **Persistence**: Save/Load full projects as .ahp.json (lossless roundtrip)
+- **Export**: CSV, Excel (multi-sheet), PDF report, JSON (via menu buttons)
+- Modern dark GUI (CustomTkinter) with graceful Tk fallback
+- Classic car selection example pre-loaded with realistic consistent judgments
+- Comprehensive inline help + settings dialog
 
 ## Tech Stack
 - **Core Computation**: Python 3.10+, NumPy, SciPy (eigen), Pandas
@@ -35,48 +35,38 @@ ahp_decision_tool/
 │   │   ├── priority_vector.py
 │   │   ├── consistency.py
 │   │   ├── synthesis.py
-│   │   └── ahp_engine.py
+│   │   ├── ahp_engine.py
 │   ├── gui/                # Modern GUI layer (depends on core)
 │   │   ├── app.py
 │   │   ├── hierarchy_editor.py
 │   │   ├── matrix_input.py
 │   │   ├── results_view.py
-│   │   └── ...
+│   │   ├── sensitivity_panel.py
+│   │   ├── theme.py
+│   │   ├── widgets/saaty_scale.py
 │   ├── utils/
 │   │   ├── persistence.py
 │   │   ├── exporters.py
-│   │   └── validators.py
-│   └── __init__.py
+│   ├── __init__.py
 ├── tests/
 ├── docs/
-│   ├── implementation_plan.md
-│   ├── task_execution_plan.md
-│   ├── agent_skill_commitments.md
-│   └── test_verification_structure.md
 ├── .github/
-│   └── workflows/ (CI)
 ├── pyproject.toml
 ├── requirements.txt
-└── README.md
+├── README.md
 ```
 
-## Getting Started (After Implementation)
+## Getting Started
 ```bash
-git clone https://github.com/<your-org>/ahp-decision-tool-gui.git
+git clone https://github.com/oguzhanahan/ahp-decision-tool-gui.git
 cd ahp-decision-tool-gui
 python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-python -m src.ahp_tool.gui.app
+pip install -e ".[gui]"
+ahp-gui
 ```
 
 ## Status
-This repository is initialized with **detailed implementation, task, agent commitment, and verification plans** following best practices for safety-critical inspired development (MISRA-adapted).
+**v1.0.0 Complete** - All phases (0-4) executed. Full working application with accurate AHP math, modern GUI, sensitivity, persistence, and multi-format export.
 
-Implementation will proceed via structured tasks with peer review. See docs/ for full plans.
-
-**License**: MIT (or Apache 2.0)
-**Author**: Grok-assisted structured project bootstrap
-
-## Contributing
-See `docs/agent_skill_commitments.md` for roles and peer-review process.
-All contributions via Pull Requests with checklist enforcement.
+**License**: MIT
+**Author**: Grok xAI structured project
