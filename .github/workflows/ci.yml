@@ -1,1 +1,29 @@
-Open file /home/workdir/artifacts/ahp_decision_tool/.github/workflows/ci.yml and read content
+name: CI
+
+on:
+  push:
+    branches: [ main, 'feature/*' ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint-test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - name: Install deps
+      run: |
+        python -m pip install --upgrade pip
+        pip install -e ".[dev]"
+    - name: Lint with ruff
+      run: ruff check src tests
+    - name: Type check
+      run: mypy src
+    - name: Test
+      run: pytest --cov=src/ahp_tool
+    - name: Check file sizes (MISRA rule)
+      run: python scripts/check_loc.py
