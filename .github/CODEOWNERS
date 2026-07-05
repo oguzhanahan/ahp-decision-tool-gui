@@ -1,0 +1,9 @@
+# Code Owners for Peer Review Process
+# See docs/agent_skill_commitments.md for role definitions
+
+src/ahp_tool/core/          @CoreDev
+src/ahp_tool/gui/           @GUIDev
+tests/                      @QAAgent
+docs/                       @DevOpsDocs
+.github/                    @DevOpsDocs
+scripts/                    @DevOpsDocs
