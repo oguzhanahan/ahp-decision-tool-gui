@@ -1,0 +1,1 @@
+Open file /home/workdir/artifacts/ahp_decision_tool/src/ahp_tool/gui/hierarchy_editor.py and read content

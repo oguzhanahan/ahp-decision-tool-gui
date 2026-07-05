@@ -1,0 +1,1 @@
+Open file /home/workdir/artifacts/ahp_decision_tool/src/ahp_tool/gui/widgets/saaty_scale.py and read content
